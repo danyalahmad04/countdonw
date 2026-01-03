@@ -2,95 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Cosmic Dashboard Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Deep Space Background */
+    --background: 230 25% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    /* Glassmorphism Cards */
+    --card: 230 30% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    /* Popover */
+    --popover: 230 30% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Cosmic Purple Primary */
+    --primary: 265 89% 66%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Neon Cyan Secondary */
+    --secondary: 185 94% 48%;
+    --secondary-foreground: 230 25% 5%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted Space */
+    --muted: 230 20% 18%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
+    /* Galaxy Pink Accent */
+    --accent: 330 85% 60%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Borders */
+    --border: 230 30% 20%;
+    --input: 230 30% 15%;
+    --ring: 265 89% 66%;
+
+    --radius: 0.75rem;
+
+    /* Cosmic Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(265, 89%, 66%), hsl(185, 94%, 48%));
+    --gradient-nebula: linear-gradient(180deg, hsl(265, 50%, 20%) 0%, hsl(230, 25%, 5%) 100%);
+    --gradient-aurora: linear-gradient(90deg, hsl(265, 89%, 66%), hsl(330, 85%, 60%), hsl(185, 94%, 48%));
+    --gradient-glass: linear-gradient(135deg, hsla(230, 30%, 20%, 0.4), hsla(230, 30%, 10%, 0.2));
+
+    /* Glow Effects */
+    --glow-primary: 0 0 20px hsla(265, 89%, 66%, 0.5);
+    --glow-secondary: 0 0 20px hsla(185, 94%, 48%, 0.5);
+    --glow-accent: 0 0 20px hsla(330, 85%, 60%, 0.5);
+    --glow-success: 0 0 20px hsla(142, 76%, 46%, 0.5);
+
+    /* 3D Button Shadows */
+    --shadow-3d: 0 4px 0 hsl(230, 30%, 8%), 0 8px 20px hsla(0, 0%, 0%, 0.4);
+    --shadow-3d-hover: 0 6px 0 hsl(230, 30%, 8%), 0 12px 25px hsla(0, 0%, 0%, 0.5);
+    --shadow-3d-active: 0 2px 0 hsl(230, 30%, 8%), 0 4px 10px hsla(0, 0%, 0%, 0.3);
+
+    /* Success Green */
+    --success: 142 76% 46%;
+    --success-foreground: 210 40% 98%;
+
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 230 25% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 265 89% 66%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 230 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 30% 20%;
+    --sidebar-ring: 265 89% 66%;
   }
 }
 
@@ -100,6 +86,67 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-cosmic {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .glass-card {
+    @apply bg-card/40 backdrop-blur-xl border border-white/10 rounded-xl;
+    background: var(--gradient-glass);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+
+  .text-glow-subtle {
+    text-shadow: 0 0 10px hsla(265, 89%, 66%, 0.5), 0 0 20px hsla(265, 89%, 66%, 0.3);
+  }
+
+  .cosmic-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-aurora);
+  }
+
+  .btn-3d {
+    @apply relative transition-all duration-300;
+    box-shadow: var(--shadow-3d);
+    transform: translateY(0);
+  }
+
+  .btn-3d:hover {
+    box-shadow: var(--shadow-3d-hover);
+    transform: translateY(-2px);
+  }
+
+  .btn-3d:active {
+    box-shadow: var(--shadow-3d-active);
+    transform: translateY(2px);
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .glow-success {
+    box-shadow: var(--glow-success);
   }
 }
